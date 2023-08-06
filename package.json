@@ -4,8 +4,11 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"start": "webpack serve --mode development --open",
+		"start": "webpack serve --mode development --open  ",
 		"build": "webpack --mode production",
+		"build:dev": "env-cmd -f .env.dev react-scripts build",
+		"build:qa": "env-cmd -f .env.qa react-scripts build",
+		"build:prod": "env-cmd -f .env.prod react-scripts build",
 		"lint": "eslint . --fix --max-warnings=0",
 		"format": "prettier . --write",
 		"prepare": "husky install"
@@ -13,6 +16,13 @@
 	"keywords": [],
 	"author": "",
 	"license": "ISC",
+	"dependencies": {
+		"dotenv": "^16.3.1",
+		"env-cmd": "^10.1.0",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0",
+		"react-scripts": "^5.0.1"
+	},
 	"devDependencies": {
 		"@babel/core": "^7.22.9",
 		"@babel/plugin-transform-runtime": "^7.22.9",
@@ -42,8 +52,16 @@
 		"*.js": "eslint --cache --fix",
 		"*.--write": "prettier --write"
 	},
-	"dependencies": {
-		"react": "^18.2.0",
-		"react-dom": "^18.2.0"
+	"browserslist": {
+		"production": [
+			">0.2%",
+			"not dead",
+			"not op_mini all"
+		],
+		"development": [
+			"last 1 chrome version",
+			"last 1 firefox version",
+			"last 1 safari version"
+		]
 	}
 }
