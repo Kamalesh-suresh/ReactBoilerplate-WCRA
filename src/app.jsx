@@ -1,7 +1,7 @@
 import React from 'react';
 
 function App() {
-	console.log(process.env.REACT_APP_API_URL);
+	console.log(process.env.API);
 	return <div>App</div>;
 }
 

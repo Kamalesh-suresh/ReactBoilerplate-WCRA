@@ -1,7 +1,8 @@
+/* eslint-disable import/no-extraneous-dependencies */
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-module.exports = {
+const config = {
 	entry: './src/index.jsx',
 	output: {
 		path: path.resolve(__dirname, 'dist'),
@@ -35,8 +36,8 @@ module.exports = {
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
-			template: './public/index.html',
-			filename: './public/index.html',
+			template: './index.html',
+			filename: './index.html',
 		}),
 	],
 	devServer: {
@@ -47,3 +48,5 @@ module.exports = {
 		children: true,
 	},
 };
+
+module.exports = config;
