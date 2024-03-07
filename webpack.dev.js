@@ -3,6 +3,7 @@
 const { merge } = require('webpack-merge');
 const { EnvironmentPlugin } = require('webpack');
 
+
 const commonConfig = require('./webpack.common');
 
 const devConfig = {
